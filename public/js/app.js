@@ -9,9 +9,9 @@ const lowTemp = document.querySelector('#low-temp')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     forecastResponse.textContent = "Loading...";
-    providedLocation.textContent = "Loading...";
-    highTemp.textContent = "Loading...";
-    lowTemp.textContent = "Loading...";
+    providedLocation.textContent = '';
+    highTemp.textContent = '';
+    lowTemp.textContent = '';
     const address = searchInput.value;
     
     fetch('/weather?address=' + address).then((response) => {
