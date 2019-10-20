@@ -11,6 +11,7 @@ const partialPath = path.join(__dirname, '../templates/partials');
 
 //initialize project as express
 const app = express();
+const port = process.env.PORT || 3000; //Heroku port || local
 
 //handlers for setting paths 
 app.use(express.static(publicDir));
@@ -79,6 +80,6 @@ app.get('*', (request, response) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log('server started: 3000');
+app.listen(port, () => {
+    console.log('server started: ' + port);
 });
