@@ -9,7 +9,7 @@ const forecast = (lat, long, callback) => {
         } else if(body.error) {
             callback({ error: 'Error in coordinates. Please try a new location' }, undefined);
         } else {
-            callback(undefined, body.daily.summary);
+            callback(undefined, body.daily);
         }
     });
 }

@@ -61,7 +61,9 @@ app.get('/weather', (request, response) => {
                     });
                 } else {
                     return response.send({
-                        summary: foreData,
+                        summary: foreData.summary,
+                        highTemp: foreData.data[0].temperatureHigh,
+                        lowTemp: foreData.data[0].temperatureLow,
                         latitude: latitude,
                         longitude: longitude,
                         location: location,
